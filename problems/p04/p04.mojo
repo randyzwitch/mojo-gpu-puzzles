@@ -20,8 +20,9 @@ fn add_10_2d(
     # FILL ME IN (roughly 2 lines)
     if row < size and col < size:
         output[row * size + col] = a[row * size + col] + 10.0
-        #RZ: key point here is that even saying this is a "2x2", in memory it's as if its 1D?
-        #RZ: So you end up doing row * size + col to index into the higher thread locations 
+        #RZ: key point here is that even saying this is a "2x2", in memory it's as if its 1D
+        #RZ: This is what's meant by "raw memory approach"
+        #RZ: So you end up doing [row * size + col] to index into the higher thread locations 
 
 # ANCHOR_END: add_10_2d
 
