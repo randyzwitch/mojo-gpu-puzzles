@@ -37,7 +37,10 @@ fn add_10_shared_layout_tensor[
     barrier()
 
     # FILL ME IN (roughly 2 lines)
+    if global_i < size:
+        output[global_i] = shared[local_i] + 10.0
 
+#RZ: Weird that both the raw memory approach and LayoutTensor approach are the same exact code?
 
 # ANCHOR_END: add_10_shared_layout_tensor
 
