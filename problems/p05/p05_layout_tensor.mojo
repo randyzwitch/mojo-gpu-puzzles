@@ -27,6 +27,16 @@ fn broadcast_add[
     col = thread_idx.x
     # FILL ME IN (roughly 2 lines)
 
+    if row < size and col<size:
+        output[row, col] = a[0,col] + b[row,0]
+
+#RZ: Layout makes it easier to do output
+#output[0,0] = a_layout[0,0] + b_layout[0,0]
+#output[0,1] = a_layout[0,0] + b_layout[1,0]
+#output[1,0] = a_layout[0,1] + b_layout[0,0]
+#output[1,1] = a_layout[0,1] + b_layout[1,0]
+
+#RZ: Used process-of-elimination...a only has columns, so first index always zero. Similar with b, but only a single column
 
 # ANCHOR_END: broadcast_add_layout_tensor
 def main() raises:

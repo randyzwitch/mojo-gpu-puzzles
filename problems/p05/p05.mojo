@@ -19,6 +19,25 @@ fn broadcast_add(
     row = thread_idx.y
     col = thread_idx.x
     # FILL ME IN (roughly 2 lines)
+    if row < size and col < size:
+        output[row * size + col] = a[col] + b[row]
+
+#Output Positions
+#Row[0], Col[0]: row * size + col = 0
+#Row[0], Col[1]: row * size + col = 1
+#Row[1], Col[0]: row * size + col = 2
+#Row[1], Col[1]: row * size + col = 3
+
+#Values
+#a: [0,1]
+#b: [0,10]
+
+#RZ: The original way I expected a[row] + b[col] doesn't work...I assume this is a "row major" vs. "column major" difference?
+#RZ: Easy here to guess by switching positions, but need to develop intuition why it need to be reversed
+
+#From answer key
+#[ a0 a1 ]  +  [ b0 ]  =  [ a0+b0  a1+b0 ]
+#              [ b1 ]     [ a0+b1  a1+b1 ]
 
 
 # ANCHOR_END: broadcast_add
