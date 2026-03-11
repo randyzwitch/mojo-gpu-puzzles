@@ -17,6 +17,16 @@ fn add_10_blocks(
 ):
     i = block_dim.x * block_idx.x + thread_idx.x
     # FILL ME IN (roughly 2 lines)
+    if i < size:
+        output[i] = a[i] + 10.0
+
+#RZ: 3 blocks of 4 threads = 12
+#RZ: Indexing math is block dimension * block number + thread number within block
+
+#From answer key
+#Block 0: [0 1 2]
+#Block 1: [3 4 5]
+#Block 2: [6 7 8]
 
 
 # ANCHOR_END: add_10_blocks
