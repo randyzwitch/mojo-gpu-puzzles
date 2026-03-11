@@ -18,7 +18,10 @@ fn add_10_blocks_2d(
     row = block_dim.y * block_idx.y + thread_idx.y
     col = block_dim.x * block_idx.x + thread_idx.x
     # FILL ME IN (roughly 2 lines)
-
+    if row < size and col < size:
+        output[row * size + col] = a[row * size + col] + 10.0
+    
+    #RZ: uses the block/size/thread pattern to get unique index, write to that output location
 
 # ANCHOR_END: add_10_blocks_2d
 
